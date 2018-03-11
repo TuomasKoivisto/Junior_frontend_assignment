@@ -12,10 +12,6 @@ const large = {
 };
 
 class Counters extends Component {
-  constructor(props) {
-    super(props);
-  }
-
   render() {
     return (
       <div className="row">

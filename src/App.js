@@ -2,8 +2,6 @@ import React, { Component } from 'react';
 import './App.css';
 import axios from 'axios';
 import _ from 'lodash';
-import BootstrapTable from 'react-bootstrap-table-next';
-import paginationFactory from 'react-bootstrap-table2-paginator';
 
 import Inputs from './components/inputs';
 import Counters from './components/counters';

@@ -54,7 +54,6 @@ class Chart extends Component {
   }
   render() {
     var days = [];
-    var count = 1;
     days = _.map(this.props.data, day => {
       return {
         x: day.date,
