@@ -6,37 +6,24 @@ const iconStyle = {
   display: 'block'
 };
 
-var storedInputs = [];
 
 class Inputs extends Component {
   constructor(props) {
     super(props);
 
-    this.setDefaultValues();
+    var storedInputs = [];
+    storedInputs = JSON.parse(localStorage.getItem('userInputs'));
 
     this.state = {
-      startDate: storedInputs[0],
-      endDate: storedInputs[1],
-      accessToken: storedInputs[2]
+      startDate: storedInputs ? storedInputs[0] : '2017-05-01',
+      endDate: storedInputs ? storedInputs[1]  :  '2017-06-15',
+      accessToken: storedInputs ? storedInputs[2] : ''
     };
     this.onInputChange(
       this.state.startDate,
       this.state.endDate,
       this.state.accessToken
     );
-  }
-
-  setDefaultValues() {
-    storedInputs = JSON.parse(localStorage.getItem('userInputs'));
-    if (storedInputs[0] === undefined) {
-      storedInputs[0] = '2017-05-01';
-    }
-    if (storedInputs[1] === undefined) {
-      storedInputs[1] = '2017-06-15';
-    }
-    if (storedInputs[2] === undefined) {
-      storedInputs[2] = '';
-    }
   }
 
   onInputChange(startDate, endDate, accessToken) {
